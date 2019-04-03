@@ -1,0 +1,36 @@
+{
+  "name": "growbox-root",
+  "version": "1.0.0",
+  "description": "Backend API (Root) - Built to collect sensor data, distribute tasks, and present it to frontends.",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node server/index.js",
+    "dev"  : "nodemon server/index.js"
+  },
+  "author": "Michael Bogle <support@mjns.it>",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjnshosting/GrowBox-Root.git"
+  },
+  "keywords": [
+    "container",
+    "farm",
+    "microgreens",
+    "vertical farm"
+  ],
+  "bugs": {
+    "url": "https://github.com/mjnshosting/GrowBox-Root/issues",
+    "email": "support@mjns.it"
+  },
+  "homepage": "http://thegrowboxproject.com",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

@@ -11,56 +11,100 @@ res.send([{count: String(await sensor.find().count())}, {data: await sensor.find
 router.get('/:skip', async (req, res) => {
   const sensor = await loadCollection('localhost','gbRoot','sensorData');
   var skip = req.params.skip * 100;
-  if (req.params.skip < 1) {
-	res.send([{count: String(await sensor.find().count())}, {data: await sensor.find().sort({timeStamp:-1}).limit(100).toArray()}]);
-   } else {
-	res.send([{count: String(await sensor.find().count())}, {data: await sensor.find().sort({timeStamp:-1}).limit(100).skip(skip).toArray()}]);
-   }
+  queryInitial = await sensor.find().sort({timeStamp:-1}).limit(100).toArray();
+  querySkip = await sensor.find().sort({timeStamp:-1}).limit(100).skip(skip).toArray();
+  queryCount = await sensor.find().count();
+  if (isNaN(req.params.skip)) {
+	res.send([{error: "Invalid input: Not a number"}]);
+  } else {
+  	if (req.params.skip < 1) {
+		res.send([{count: String(queryCount)}, {data: queryInitial}]);
+	   } else {
+		if (querySkip === undefined || querySkip.length == 0) {
+			res.send([{error: "Empty Array: No data returned"}]);
+		} else {
+			res.send([{count: String(queryCount)}, {data: querySkip}]);
+		}
+   	}
+  }
 });
 
 router.get('/device/:device', async (req, res) => {
   const sensor = await loadCollection('localhost','gbRoot','sensorData');
-  res.send(await sensor.find({deviceId:req.params.device}).sort({timeStamp:-1}).limit(100).toArray());
+  res.send([{count: String(await sensor.find({deviceId:req.params.device}).count())}, {data: await sensor.find({deviceId:req.params.device}).sort({timeStamp:-1}).limit(100).toArray()}]);
 });
 
 router.get('/device/:device/:skip', async (req, res) => {
   const sensor = await loadCollection('localhost','gbRoot','sensorData');
   var skip = req.params.skip * 100;
-  if (req.params.skip < 1) {
-	res.send(await sensor.find({deviceId:req.params.device}).sort({timeStamp:-1}).limit(100).toArray());
-   } else {
-	res.send(await sensor.find({deviceId:req.params.device}).sort({timeStamp:-1}).limit(100).skip(skip).toArray());
-   }
+  queryInitial = await sensor.find({deviceId:req.params.device}).sort({timeStamp:-1}).limit(100).toArray();
+  querySkip = await sensor.find({deviceId:req.params.device}).sort({timeStamp:-1}).limit(100).skip(skip).toArray();
+  queryCount = await sensor.find({deviceId:req.params.device}).count();
+  if (isNaN(req.params.skip)) {
+	res.send([{error: "Invalid input: Not a number"}]);
+  } else {
+        if (req.params.skip < 1) {
+                res.send([{count: String(queryCount)}, {data: queryInitial}]);
+        } else {
+        	if (querySkip === undefined || querySkip.length == 0) {
+                        res.send([{error: "Empty Array: No data returned"}]);
+                } else {
+                        res.send([{count: String(queryCount)}, {data: querySkip}]);
+                }
+        }
+  }
 });
 
 router.get('/type/:type', async (req, res) => {
   const sensor = await loadCollection('localhost','gbRoot','sensorData');
-  res.send(await sensor.find({readingType:req.params.type}).sort({timeStamp:-1}).limit(100).toArray());
+  res.send([{count: String(await sensor.find({readingType:req.params.type}).count())}, {data: await sensor.find({readingType:req.params.type}).sort({timeStamp:-1}).limit(100).toArray()}]);
 });
 
 router.get('/type/:type/:skip', async (req, res) => {
   const sensor = await loadCollection('localhost','gbRoot','sensorData');
   var skip = req.params.skip * 100;
-  if (req.params.skip < 1) {
-	res.send(await sensor.find({readingType:req.params.type}).sort({timeStamp:-1}).limit(100).toArray());
-   } else {
-	res.send(await sensor.find({readingType:req.params.type}).sort({timeStamp:-1}).limit(100).skip(skip).toArray());
-   }
+  queryInitial = await sensor.find({readingType:req.params.type}).sort({timeStamp:-1}).limit(100).toArray();  
+  querySkip = await sensor.find({readingType:req.params.type}).sort({timeStamp:-1}).limit(100).skip(skip).toArray();  
+  queryCount = await sensor.find({readingType:req.params.type}).count();
+  if (isNaN(req.params.skip)) {
+	res.send([{error: "Invalid input: Not a number"}]);
+  } else {
+        if (req.params.skip < 1) {
+                res.send([{count: String(queryCount)}, {data: queryInitial}]);
+        } else {
+                if (querySkip === undefined || querySkip.length == 0) {
+                        res.send([{error: "Empty Array: No data returned"}]);
+                } else {
+                        res.send([{count: String(queryCount)}, {data: querySkip}]);
+                }
+        }
+  }
 });
 
 router.get('/:device/:type', async (req, res) => {
   const sensor = await loadCollection('localhost','gbRoot','sensorData');
-  res.send(await sensor.find({deviceId:req.params.device,readingType:req.params.type}).sort({timeStamp:-1}).limit(100).toArray());
+  res.send([{count: String(await sensor.find({deviceId:req.params.device,readingType:req.params.type}).count())}, {data: await sensor.find({deviceId:req.params.device,readingType:req.params.type}).sort({timeStamp:-1}).limit(100).toArray()}]);
 });
 
 router.get('/:device/:type/:skip', async (req, res) => {
   const sensor = await loadCollection('localhost','gbRoot','sensorData');
   var skip = req.params.skip * 100;
-  if (req.params.skip < 1) {
-	res.send(await sensor.find({deviceId:req.params.device,readingType:req.params.type}).sort({timeStamp:-1}).limit(100).toArray());
-   } else {
-	res.send(await sensor.find({deviceId:req.params.device,readingType:req.params.type}).sort({timeStamp:-1}).limit(100).skip(skip).toArray());
-   }
+  queryInitial = await sensor.find({deviceId:req.params.device,readingType:req.params.type}).sort({timeStamp:-1}).limit(100).toArray();
+  querySkip = await sensor.find({deviceId:req.params.device,readingType:req.params.type}).sort({timeStamp:-1}).limit(100).skip(skip).toArray(); 
+  queryCount = await sensor.find({deviceId:req.params.device,readingType:req.params.type}).count();
+  if (isNaN(req.params.skip)) {
+	res.send([{error: "Invalid input: Not a number: Not a number"}]);
+  } else {
+        if (req.params.skip < 1) {
+                res.send([{count: String(queryCount)}, {data: queryInitial}]);
+        } else {
+                if (querySkip === undefined || querySkip.length == 0) {
+                        res.send([{error: "Empty Array: No data returned"}]);
+                } else {
+                        res.send([{count: String(queryCount)}, {data: querySkip}]);
+                }
+        }
+  }
 });
 
 // Add SensorData

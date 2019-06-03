@@ -11,7 +11,7 @@
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mjnshosting/growBox-Root.git"
+    "url": "git+https://github.com/treestarsystems/growBox-Root.git"
   },
   "keywords": [
     "container",
@@ -20,7 +20,7 @@
     "vertical farm"
   ],
   "bugs": {
-    "url": "https://github.com/mjnshosting/GrowBox-Root/issues",
+    "url": "https://github.com/treestarsystems/GrowBox-Root/issues",
     "email": "support@mjns.it"
   },
   "homepage": "http://thegrowboxproject.com",

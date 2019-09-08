@@ -32,7 +32,7 @@ function getUserInfo() {
 	var userData = JSON.parse(fs.readFileSync(coreVars.systemUser));
 	uid = parseInt(childProcess.execSync(`id -u ${userData.username}`).toString().replace(/\n$/, ''));
 	gid = parseInt(childProcess.execSync(`id -g ${userData.username}`).toString().replace(/\n$/, ''));
-        return {"uid": uid,"gid": gid};
+        return {"uid": uid,"gid": gid,"userName": userData.username};
 }
 
 //Generate a random alphanumeric string
@@ -90,9 +90,9 @@ function createDir (path) {
 
 //Used to check if the app is started as the correct user (www-data) due to permissions requirements.
 function incorrectUser (user,host,port) {
-	if (process.env.USER != coreVars.userInfo) {
+	if (process.env.USER != coreVars.userInfo.userName) {
 		console.log(`\nCurrent User: ${emoji.emojify(`:x::scream: ${user} :scream::x:`)}`);
-		console.log('This process must be ran as the www-data user or else permission errors will impede functionality.\n');
+		console.log(`This process must be ran as the ${coreVars.userInfo.userName} user or else permission errors will impede functionality.\n`);
 		process.exit(0);
 	} else {
 		var startMessage = console.log(`\nServer started by ${user} on ${host}:${port} in ${process.env.NODE_ENV} mode`);

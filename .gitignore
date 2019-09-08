@@ -1,10 +1,11 @@
-/dbs/*
-/trash
+trash
+log_storage
+db_storage
 *.swp
 *.save
-/confs/growbox_variables.php*
 node_modules
 /server/public
 hardcopy.0
 screenlog.0
 system_user.json
+

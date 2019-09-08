@@ -7,7 +7,7 @@ module.exports = {
     instances	: "max",
     exec_mode	: "cluster",
     watch	: ["./server","./system_confs"],
-    ignore_watch	: ["./log_storage","./db_storage","./message_storage"],
+    ignore_watch	: ["./log_storage","./db_storage"],
     out_file	: "./log_storage/growBox-Root_out.log",
     error_file	: "./log_storage/growBox-Root_err.log",
     pid_file	: "./log_storage/pid/growBox-Root_id.pid",

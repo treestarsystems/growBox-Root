@@ -21,17 +21,38 @@ app.use('/api/sensor', sensor);
 app.use('/api/branch', branch);
 app.use('/api/stem', stem);
 
+//Ensure the correct permissions are applied to the scripts
+core.changePerm(core.coreVars.installedDir);
 
-
-// Handle production
-if (process.env.NODE_ENV === 'production') {
-  // Static folder
-  app.use(express.static(__dirname + '/public/'));
-
-  // Handle SPA
-  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+//Create Storage Directories if they do not exist.
+//These should be mounted to a large storage pool
+if (!fs.existsSync(core.coreVars.installedDir)){
+	core.createDir (core.coreVars.installedDir);
+}
+if (!fs.existsSync(core.coreVars.dbStoreDir)){
+	core.createDir (core.coreVars.dbStoreDir);
 }
 
-const port = process.env.PORT || 5000;
+//Check if app is run in dev or prod mode.
+core.incorrectUser(process.env.USER,process.env.HOST,process.env.PORT);
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+if (process.env.CORRECT_USER) {
+	app.listen(process.env.PORT, process.env.HOST, () => {
+		console.log(`${emoji.emojify(':heavy_check_mark:.....:100:')}`);
+		//Write daemon data as a json object to a file so it can be called later.
+		daemon.instanceInfo(process.env.pm_id,process.env.name,process.env.NODE_APP_INSTANCE,process.env.NODE_ENV);
+	});
+}
+
+// Handle production
+//if (process.env.NODE_ENV === 'production') {
+  // Static folder
+//  app.use(express.static(__dirname + '/public/'));
+
+  // Handle SPA
+//  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+//}
+
+//const port = process.env.PORT || 5000;
+
+//app.listen(port, () => console.log(`Server started on port ${port}`));

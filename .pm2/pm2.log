@@ -1,0 +1,152 @@
+2019-09-08T12:10:11: PM2 log: ===============================================================================
+2019-09-08T12:10:11: PM2 log: --- New PM2 Daemon started ----------------------------------------------------
+2019-09-08T12:10:11: PM2 log: Time                 : Sun Sep 08 2019 12:10:11 GMT-0400 (EDT)
+2019-09-08T12:10:11: PM2 log: PM2 version          : 3.5.1
+2019-09-08T12:10:11: PM2 log: Node.js version      : 8.10.0
+2019-09-08T12:10:11: PM2 log: Current arch         : x64
+2019-09-08T12:10:11: PM2 log: PM2 home             : /opt/growBox-Root/.pm2
+2019-09-08T12:10:11: PM2 log: PM2 PID file         : /opt/growBox-Root/.pm2/pm2.pid
+2019-09-08T12:10:11: PM2 log: RPC socket file      : /opt/growBox-Root/.pm2/rpc.sock
+2019-09-08T12:10:11: PM2 log: BUS socket file      : /opt/growBox-Root/.pm2/pub.sock
+2019-09-08T12:10:11: PM2 log: Application log path : /opt/growBox-Root/.pm2/logs
+2019-09-08T12:10:11: PM2 log: Process dump file    : /opt/growBox-Root/.pm2/dump.pm2
+2019-09-08T12:10:11: PM2 log: Concurrent actions   : 2
+2019-09-08T12:10:11: PM2 log: SIGTERM timeout      : 1600
+2019-09-08T12:10:11: PM2 log: ===============================================================================
+2019-09-08T12:10:12: PM2 log: [Watch] Start watching growBox-Root
+2019-09-08T12:10:12: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:10:12: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:10:12: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:18:31: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T12:18:31: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:18:31: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:18:31: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:18:31: PM2 log: pid=10592 msg=process killed
+2019-09-08T12:18:31: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:18:31: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:18:31: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:18:52: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:18:52: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:18:52: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:18:53: PM2 log: pid=10728 msg=process killed
+2019-09-08T12:18:53: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:18:53: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:18:53: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:20:05: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T12:20:05: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:20:05: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:20:05: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:20:05: PM2 log: pid=10766 msg=process killed
+2019-09-08T12:20:05: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:20:05: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:20:05: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:20:37: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:20:37: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:20:37: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:20:37: PM2 log: pid=10797 msg=process killed
+2019-09-08T12:20:37: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:20:37: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:20:37: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:22:10: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T12:22:10: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:22:10: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:22:10: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:22:10: PM2 log: pid=10843 msg=process killed
+2019-09-08T12:22:10: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:22:10: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:22:10: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:24:32: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T12:24:32: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:24:32: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:24:32: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:24:32: PM2 log: pid=10877 msg=process killed
+2019-09-08T12:24:32: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:24:33: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:24:33: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:25:21: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T12:25:21: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:25:21: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:25:21: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:25:22: PM2 log: pid=10906 msg=process killed
+2019-09-08T12:25:22: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:25:22: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:25:22: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:25:45: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:25:45: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:25:45: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:25:45: PM2 log: pid=11482 msg=process killed
+2019-09-08T12:25:45: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:25:45: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:25:45: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:28:40: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T12:28:40: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:28:40: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:28:40: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:28:40: PM2 log: pid=11534 msg=process killed
+2019-09-08T12:28:40: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:28:40: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:28:40: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:29:03: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T12:29:03: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:29:03: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:29:03: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:29:03: PM2 log: pid=11581 msg=process killed
+2019-09-08T12:29:03: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:29:04: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:29:04: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:30:53: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T12:30:53: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:30:53: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:30:53: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:30:53: PM2 log: pid=11600 msg=process killed
+2019-09-08T12:30:53: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:30:53: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:30:53: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:50:07: PM2 error: Change detected on path server/index.js for app growBox-Root - restarting
+2019-09-08T12:50:07: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:50:07: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:50:07: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:50:07: PM2 log: pid=11623 msg=process killed
+2019-09-08T12:50:07: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:50:08: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:50:08: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:56:14: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T12:56:14: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:56:14: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:56:14: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:56:15: PM2 log: pid=11819 msg=process killed
+2019-09-08T12:56:15: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:56:15: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:56:15: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T12:58:34: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T12:58:34: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T12:58:34: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T12:58:34: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T12:58:34: PM2 log: pid=11847 msg=process killed
+2019-09-08T12:58:34: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T12:58:35: PM2 log: App [growBox-Root:0] online
+2019-09-08T12:58:35: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T13:00:51: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T13:00:51: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T13:00:51: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T13:00:51: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T13:00:51: PM2 log: pid=11871 msg=process killed
+2019-09-08T13:00:51: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T13:00:52: PM2 log: App [growBox-Root:0] online
+2019-09-08T13:00:52: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T13:01:41: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T13:01:41: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T13:01:41: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T13:01:41: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T13:01:41: PM2 log: pid=11894 msg=process killed
+2019-09-08T13:01:41: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T13:01:42: PM2 log: App [growBox-Root:0] online
+2019-09-08T13:01:42: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.
+2019-09-08T13:03:21: PM2 error: Change detected on path server/daemon.js for app growBox-Root - restarting
+2019-09-08T13:03:21: PM2 log: Stopping app:growBox-Root id:0
+2019-09-08T13:03:21: PM2 log: App name:growBox-Root id:0 disconnected
+2019-09-08T13:03:21: PM2 log: App [growBox-Root:0] exited with code [0] via signal [SIGINT]
+2019-09-08T13:03:22: PM2 log: pid=11913 msg=process killed
+2019-09-08T13:03:22: PM2 log: App [growBox-Root:0] starting in -cluster mode-
+2019-09-08T13:03:22: PM2 log: App [growBox-Root:0] online
+2019-09-08T13:03:22: PM2 error: (node:10582) [DEP0007] DeprecationWarning: worker.suicide is deprecated. Please use worker.exitedAfterDisconnect.

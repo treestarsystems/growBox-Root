@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
+/*
+Purpose: Collects information about the running process to make it easier to stop,
+	 delete, and restart.
+ToDo:    Make this all async.
+*/
+
 const fs = require('fs').promises;
 const fsSync = require('fs');
 const path = require('path');
@@ -13,21 +19,22 @@ async function readFile (file) {
 }
 
 async function instanceInfo (id,name,instance,environment) {
-	var pm2Info = {};
-	pm2Info.id = id;
-	pm2Info.name = name;
-	pm2Info.pid = await readFile(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}_id-${id}.pid`);
+	var info = {};
+	info.id = id;
+	info.name = name;
+	//This is not working as an async function call.
+//	info.pid = await readFile(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}_id-${id}.pid`);
+	info.pid = fsSync.readFileSync(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}_id-${id}.pid`);
 	//I believe this is the same as the id but I will keep it since it is another env variable.
-	pm2Info.instance = instance;
-	pm2Info.environment = environment;
+	info.instance = instance;
+	info.environment = environment;
 
-	let data = JSON.stringify(pm2Info, null, 2);
+	let data = JSON.stringify(info, null, 2);
 
-	fs.writeFile(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}Kill.json`, data, (err) => {
+	fsSync.writeFile(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}Kill.json`, data, (err) => {
 		if (err) throw err;
 	});
 }
-
 
 if (argv.k) {
 	let contents = JSON.parse(fsSync.readFileSync(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}Kill.json`));

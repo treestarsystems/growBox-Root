@@ -1,11 +1,12 @@
-trash
-log_storage
-db_storage
+/trash
+/log_storage
+/db_storage
+/v8-compile-cache*
+/.pm2
+/server/public
 *.swp
 *.save
 node_modules
-/server/public
 hardcopy.0
 screenlog.0
 system_user.json
-

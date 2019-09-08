@@ -1,8 +1,12 @@
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const app = express();
+const core = require(path.join(__dirname, 'gbmodules/gbRootModules.js'));
+const daemon = require(path.join(__dirname, 'daemon.js'));
+const emoji = require('node-emoji');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
-const app = express();
 
 // Middleware
 app.use(bodyParser.json());
@@ -16,6 +20,8 @@ const stem = require('./routes/api/stem');
 app.use('/api/sensor', sensor);
 app.use('/api/branch', branch);
 app.use('/api/stem', stem);
+
+
 
 // Handle production
 if (process.env.NODE_ENV === 'production') {

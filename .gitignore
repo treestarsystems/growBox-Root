@@ -7,3 +7,4 @@ node_modules
 /server/public
 hardcopy.0
 screenlog.0
+system_user.json

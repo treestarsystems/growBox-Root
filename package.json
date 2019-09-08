@@ -4,8 +4,11 @@
   "description": "Backend API (Root) - Built to collect sensor data, distribute tasks, and present it to frontends.",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "nodemon server/index.js"
+    "start": "pm2 start system_confs/ecosystem.config.js --env prod",
+    "dev": "pm2 start system_confs/ecosystem.config.js --env dev",
+    "stop-instance": "server/daemon.js -k",
+    "delete-instance": "server/daemon.js -d",
+    "restart-instance": "server/daemon.js -r"
   },
   "author": "Michael Bogle <support@mjns.it>",
   "license": "GPL-3.0",
@@ -25,6 +28,9 @@
   },
   "homepage": "http://thegrowboxproject.com",
   "dependencies": {
+    "axios": "^0.19.0",
+    "lodash": ">=4.17.15",
+    "node-emoji": "^1.10.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",

@@ -15,12 +15,12 @@ module.exports = {
     env: {
       "NODE_ENV": "prod",
       "PORT": "3001",
-      "HOST": "localhost"
+      "HOST": "0.0.0.0"
     },
     env_dev : {
       "NODE_ENV": "dev",
       "PORT": "3101",
-      "HOST": "localhost"
+      "HOST": "0.0.0.0"
     }
   }]
 }

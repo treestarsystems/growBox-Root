@@ -24,7 +24,7 @@ async function instanceInfo (id,name,instance,environment) {
 	info.name = name;
 	//This is not working as an async function call.
 //	info.pid = await readFile(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}_id-${id}.pid`);
-	info.pid = fsSync.readFileSync(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}_id-${id}.pid`);
+	info.pid = fsSync.readFileSync(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}_id-${id}.pid`).toString();
 	//I believe this is the same as the id but I will keep it since it is another env variable.
 	info.instance = instance;
 	info.environment = environment;
@@ -39,6 +39,10 @@ async function instanceInfo (id,name,instance,environment) {
 if (argv.k) {
 	let contents = JSON.parse(fsSync.readFileSync(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}Kill.json`));
 	childProcess.execSync(`pm2 stop ${contents.id}`);
+}
+if (argv.s) {
+	let contents = JSON.parse(fsSync.readFileSync(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}Kill.json`));
+	childProcess.execSync(`pm2 status ${contents.id}`);
 }
 if (argv.d) {
 	let contents = JSON.parse(fsSync.readFileSync(`${core.coreVars.logStoreDir}/pid/${core.coreVars.projectName}Kill.json`));

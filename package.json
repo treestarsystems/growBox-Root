@@ -7,8 +7,10 @@
     "start": "pm2 start system_confs/ecosystem.config.js --env prod",
     "dev": "pm2 start system_confs/ecosystem.config.js --env dev",
     "stop-instance": "server/daemon.js -k",
+    "status-instance": "pm2 status",
     "delete-instance": "server/daemon.js -d",
-    "restart-instance": "server/daemon.js -r"
+    "restart-instance": "server/daemon.js -r",
+    "log-instance": "pm2 log"
   },
   "author": "Michael Bogle <support@mjns.it>",
   "license": "GPL-3.0",

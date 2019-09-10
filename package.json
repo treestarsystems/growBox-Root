@@ -6,10 +6,10 @@
   "scripts": {
     "start": "pm2 start system_confs/ecosystem.config.js --env prod",
     "dev": "pm2 start system_confs/ecosystem.config.js --env dev",
-    "stop-instance": "server/daemon.js -k",
+    "stop-instance": "server/service.js -k",
     "status-instance": "pm2 status",
-    "delete-instance": "server/daemon.js -d",
-    "restart-instance": "server/daemon.js -r",
+    "delete-instance": "server/service.js -d",
+    "restart-instance": "server/service.js -r",
     "log-instance": "pm2 log"
   },
   "author": "Michael Bogle <support@mjns.it>",
@@ -22,6 +22,7 @@
     "container",
     "farm",
     "microgreens",
+    "urban farming",
     "vertical farm"
   ],
   "bugs": {
@@ -31,14 +32,15 @@
   "homepage": "http://thegrowboxproject.com",
   "dependencies": {
     "axios": "^0.19.0",
-    "lodash": ">=4.17.15",
-    "node-emoji": "^1.10.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "inquirer": "^6.3.0",
+    "lodash": ">=4.17.15",
     "minimist": "^1.2.0",
-    "mongodb": "^3.2.6"
+    "mongodb": "^3.2.6",
+    "node-emoji": "^1.10.0",
+    "selfsigned": "^1.10.6"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"

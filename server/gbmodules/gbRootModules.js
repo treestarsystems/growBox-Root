@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const childProcess = require('child_process');
 const emoji = require('node-emoji');
+var gbSystem = require(path.join(__dirname, '../../system_confs/system_vars.json'));
 
 //Variables and Constants
 var coreVars = {
@@ -23,16 +24,15 @@ var coreVars = {
 	"dbSensorDataCollection": "sensorData"
 }
 
-coreVars.instanceId = path.join(__dirname, `../../log_storage/pid/${coreVars.projectName}Instance.id`);
+coreVars.instanceId = path.join(__dirname, `../../log_storage/pid/${coreVars.projectName}_Instance.id`);
 coreVars.userInfo = getUserInfo();
 
 //Functions
 //Get numeric id for the gb user from system_confs/system_user.json file.
 function getUserInfo() {
-	var userData = JSON.parse(fs.readFileSync(coreVars.systemUser));
-	uid = parseInt(childProcess.execSync(`id -u ${userData.username}`).toString().replace(/\n$/, ''));
-	gid = parseInt(childProcess.execSync(`id -g ${userData.username}`).toString().replace(/\n$/, ''));
-        return {"uid": uid,"gid": gid,"userName": userData.username};
+	uid = parseInt(childProcess.execSync(`id -u ${gbSystem.username}`).toString().replace(/\n$/, ''));
+	gid = parseInt(childProcess.execSync(`id -g ${gbSystem.username}`).toString().replace(/\n$/, ''));
+        return {"uid": uid,"gid": gid,"userName": gbSystem.username};
 }
 
 //Generate a random alphanumeric string

@@ -3,6 +3,7 @@
 /db_storage
 /v8-compile-cache*
 /.pm2
+/system_confs/certs
 /server/public
 *.swp
 *.save

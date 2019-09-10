@@ -5,9 +5,11 @@
 /.pm2
 /system_confs/certs
 /server/public
+/.npm
+/.local
 *.swp
 *.save
 node_modules
 hardcopy.0
 screenlog.0
-system_user.json
+system_*.json

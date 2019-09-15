@@ -42,12 +42,8 @@ function toPositiveHex(hexString){
 }
 
 function getAlgorithm(key) {
-//  switch (key) {
-//    case 'sha256':
+	//gbRoot Edit: I only want SHA256.
       return forge.md.sha256.create();
-//    default:
-//      return forge.md.sha1.create();
-//  }
 }
 
 exports.generate = function generate(attrs, options, done) {
@@ -68,8 +64,10 @@ exports.generate = function generate(attrs, options, done) {
 
     cert.validity.notBefore = new Date();
     cert.validity.notAfter = new Date();
+    //gbRoot Edit: I want certs to last 10yrs
     cert.validity.notAfter.setDate(cert.validity.notBefore.getDate() + (options.days || 3650));
 
+    //gbRoot Edit: Some fields are blank for simplicity
     attrs = attrs || [{
       name: 'commonName',
       value: 'growBox-Device'
@@ -109,6 +107,7 @@ exports.generate = function generate(attrs, options, done) {
       name: 'subjectAltName',
       altNames: [{
         type: 6, // URI
+	//gbRoot Edit: I want this defaulted to the project's site
         value: 'https//thegrowboxproject.com'
       }]
     }]);
@@ -137,12 +136,14 @@ exports.generate = function generate(attrs, options, done) {
     }
 
     if (options && options.clientCertificate) {
+      //gbRoot Edit: I want keySize set to 4096 by default
       var clientkeys = forge.pki.rsa.generateKeyPair(4096);
       var clientcert = forge.pki.createCertificate();
       clientcert.serialNumber = toPositiveHex(forge.util.bytesToHex(forge.random.getBytesSync(9)));
       clientcert.validity.notBefore = new Date();
       clientcert.validity.notAfter = new Date();
-      //I want client certs to last 10yrs
+
+      //gbRoot Edit: I want client certs to last 10yrs
       clientcert.validity.notAfter.setFullYear(clientcert.validity.notBefore.getFullYear() + 10);
 
       var clientAttrs = JSON.parse(JSON.stringify(attrs));
@@ -196,6 +197,7 @@ exports.generate = function generate(attrs, options, done) {
     return pem;
   };
 
+  //gbRoot Edit: I want keySize set to 4096 by default
   var keySize = options.keySize || 4096;
 
   if (done) { // async scenario

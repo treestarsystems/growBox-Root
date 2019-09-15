@@ -1,9 +1,8 @@
 const express = require('express');
 const fs = require('fs');
-const path = require('path');
 const app = express();
-const core = require(path.join(__dirname, 'gbmodules/gbRootModules.js'));
-const daemon = require(path.join(__dirname, 'service.js'));
+const core = require('./gbmodules/gbRootCore.js');
+const daemon = require('./service.js');
 const emoji = require('node-emoji');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -12,14 +11,19 @@ const cors = require('cors');
 app.use(bodyParser.json());
 app.use(cors());
 
-const sensor = require('./routes/api/sensor');
-const branch = require('./routes/api/branch');
+const root = require('./routes/api/root');
 const stem = require('./routes/api/stem');
-//const gbRootModules = require('./modules/gbRootModules');
+const branch = require('./routes/api/branch');
+const flower = require('./routes/api/flower');
+const soil = require('./routes/api/soil');
+const petal = require('./routes/api/petal');
 
-app.use('/api/sensor', sensor);
-app.use('/api/branch', branch);
+app.use('/api/root', root);
 app.use('/api/stem', stem);
+app.use('/api/branch', branch);
+app.use('/api/flower', flower);
+app.use('/api/soil', soil);
+app.use('/api/petal', petal);
 
 //Ensure the correct permissions are applied to the scripts
 core.changePerm(core.coreVars.installedDir);

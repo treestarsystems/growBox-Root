@@ -4,11 +4,13 @@ const fs = require('fs');
 const path = require('path');
 const childProcess = require('child_process');
 const emoji = require('node-emoji');
-var gbSystem = require(path.join(__dirname, '../../system_confs/system_vars.json'));
+var gbSystem = require('../../system_confs/system_vars.json');
 
 //Variables and Constants
 var coreVars = {
-	"systemUser": path.join(__dirname, '../../system_confs/system_user.json'),
+//	"systemUser": path.join(__dirname, '../../system_confs/system_vars.json'),
+	"systemUser": '../../system_confs/system_vars.json',
+	"systemConfsDir": path.join(__dirname, '../../system_confs'),
 	"projectName": "growBox-Root",
 	"installedDir": path.join(__dirname, '../..'),
 	"dbStoreDir": path.join(__dirname, '../../db_storage'),
@@ -24,7 +26,8 @@ var coreVars = {
 	"dbSensorDataCollection": "sensorData"
 }
 
-coreVars.instanceId = path.join(__dirname, `../../log_storage/pid/${coreVars.projectName}_Instance.id`);
+//coreVars.instanceId = path.join(__dirname, `../../log_storage/pid/${coreVars.projectName}_Instance.id`);
+coreVars.instanceId = `../../log_storage/pid/${coreVars.projectName}_Instance.id`;
 coreVars.userInfo = getUserInfo();
 
 //Functions

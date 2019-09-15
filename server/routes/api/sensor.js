@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const loadCollection = require('../../gbmodules/gbRootModules').loadCollection;
+const loadCollection = require('../../gbmodules/gbRootCore.js').loadCollection;
 
 // Get SensorData
 router.get('/', async (req, res) => {

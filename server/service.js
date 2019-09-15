@@ -8,8 +8,7 @@ ToDo:    Make this all async....man fuck all dat
 
 const fs = require('fs');
 const fsSync = require('fs');
-const path = require('path');
-const core = require(path.join(__dirname, 'gbmodules/gbRootModules.js'));
+const core = require('./gbmodules/gbRootCore.js');
 const childProcess = require('child_process');
 var argv = require('minimist')(process.argv.slice(2));
 

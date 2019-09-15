@@ -1,7 +1,7 @@
 const express = require('express');
 const mongodb = require('mongodb');
 const router = express.Router();
-const gbRootModules = require('../../gbmodules/gbRootModules');
+const gbRootModules = require('../../gbmodules/gbRootCore.js');
 
 // Get All from BranchData
 router.get('/', async (req, res) => {

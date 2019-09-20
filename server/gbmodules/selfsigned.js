@@ -137,7 +137,7 @@ exports.generate = function generate(attrs, options, done) {
 
     if (options && options.clientCertificate) {
       //gbRoot Edit: I want keySize set to 4096 by default
-      var clientkeys = forge.pki.rsa.generateKeyPair(4096);
+      var clientkeys = forge.pki.rsa.generateKeyPair(1024);
       var clientcert = forge.pki.createCertificate();
       clientcert.serialNumber = toPositiveHex(forge.util.bytesToHex(forge.random.getBytesSync(9)));
       clientcert.validity.notBefore = new Date();

@@ -8,7 +8,6 @@ var gbSystem = require('../../system_confs/system_vars.json');
 
 //Variables and Constants
 var coreVars = {
-//	"systemUser": path.join(__dirname, '../../system_confs/system_vars.json'),
 	"systemUser": '../../system_confs/system_vars.json',
 	"systemConfsDir": path.join(__dirname, '../../system_confs'),
 	"projectName": "growBox-Root",
@@ -23,8 +22,16 @@ var coreVars = {
 	"dbFlowerDataCollection": "flowerData",
 	"dbSoilDataCollection": "soilData",
 	"dbPetalDataCollection": "petalData",
-	"dbSensorDataCollection": "sensorData"
+	"dbSensorDataCollection": "sensorData",
+	"dbCertsDataCollection": "certsData",
 }
+
+//Selfsigned certificate attributes
+coreVars.certAttrs = [
+	{name: 'commonName', value: `${gbSystem.systemId}.${gbSystem.systemDomain}`},
+	{name: 'organizationName', value: 'TreeStarSystems'},
+	{name: 'organizationalUnitName', value: 'growBox Project'}
+];
 
 //coreVars.instanceId = path.join(__dirname, `../../log_storage/pid/${coreVars.projectName}_Instance.id`);
 coreVars.instanceId = `../../log_storage/pid/${coreVars.projectName}_Instance.id`;

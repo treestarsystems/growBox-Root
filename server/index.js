@@ -17,6 +17,7 @@ const branch = require('./routes/api/branch');
 const flower = require('./routes/api/flower');
 const soil = require('./routes/api/soil');
 const petal = require('./routes/api/petal');
+const certs = require('./routes/api/certs');
 
 app.use('/api/root', root);
 app.use('/api/stem', stem);
@@ -24,6 +25,7 @@ app.use('/api/branch', branch);
 app.use('/api/flower', flower);
 app.use('/api/soil', soil);
 app.use('/api/petal', petal);
+app.use('/api/certs', certs);
 
 //Ensure the correct permissions are applied to the scripts
 core.changePerm(core.coreVars.installedDir);

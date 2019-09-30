@@ -12,7 +12,7 @@ module.exports = {
     error_file	: "./log_storage/growBox-Root_err.log",
     pid_file	: "./log_storage/pid/growBox-Root_id.pid",
     log_date_format	: "YYYY-MM-DD HH:mm Z",
-    kill_timeout : 100000,
+    kill_timeout : 60000,
     env: {
       "NODE_ENV": "prod",
       "PORT": "3001",

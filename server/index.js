@@ -65,8 +65,6 @@ if (process.env.CORRECT_USER) {
 	                        }
 				//Start has completed.
         	                console.log(`MongoDB start complete: ${stdout.replace(/\n$/, '')}`);
-				//Start app
-				startApp();
 	                });
 	        }
 		//MongoDB is running.

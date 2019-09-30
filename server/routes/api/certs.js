@@ -22,7 +22,7 @@ router.post('/generate', async (req, res) => {
 
 // Generate Client Certificate Object
 router.post('/generate/:clientId', async (req, res) => {
-	fs.readFile(`${core.coreVars.systemConfsDir}/certs/gbRootCert.json`, 'utf8', (error,data) => {
+	fs.readFile(`${core.coreVars.systemConfsDir}/certs/growBox-Root_Cert.json`, 'utf8', (error,data) => {
 		if (error) {
 			console.log("growBox-Root CA does not exist. Please create a growBox-Root CA first");
 			res.set('Content-Type', 'application/json');

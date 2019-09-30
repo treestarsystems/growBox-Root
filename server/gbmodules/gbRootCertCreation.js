@@ -20,19 +20,19 @@ function generateRootCert() {
 		certObject = {"private": pems.private, "public": pems.public, "cert": pems.cert, "pem": `${pems.private}${pems.cert}`};
 		console.log (certObject.cert);
 
-		fs.writeFile(`${core.coreVars.systemConfsDir}/certs/gbRootCert.json`, JSON.stringify(certObject), (err) => {
+		fs.writeFile(`${core.coreVars.systemConfsDir}/certs/growBox-Root_Cert.json`, JSON.stringify(certObject), (err) => {
 			if (err) throw err;
 		});
 
 		console.log(certObject.pem);
-		fs.writeFile(`${core.coreVars.systemConfsDir}/certs/gbRootCert.pem`, certObject.pem, (err) => {
+		fs.writeFile(`${core.coreVars.systemConfsDir}/certs/growBox-Root_Cert.pem`, certObject.pem, (err) => {
 			if (err) throw err;
 		});
 	});
 }
 
 function generateClientCert(clientId) {
-	fs.readFile(`${core.coreVars.systemConfsDir}/certs/gbRootCert.json`, 'utf8', (error,data) => {
+	fs.readFile(`${core.coreVars.systemConfsDir}/certs/growBox-Root_Cert.json`, 'utf8', (error,data) => {
 		if (error) {
 			return {"status": "growBox-Root CA does not exist. Please create a growBox-Root CA first"};
 		}
@@ -53,37 +53,9 @@ function generateClientCert(clientId) {
 	});
 }
 
-function readRootCert() {
-	var certObject = {};
-	if (fs.existsSync(`${core.coreVars.systemConfsDir}/certs/gbRootCert.json`)) {
-		var gbRootCert = require(`${core.coreVars.systemConfsDir}/certs/gbRootCert.json`);
-		certObject = {"cert": gbRootCert.cert};
-		console.log(certObject);
-	}
-	return certObject;
-/*
-	fs.access(`${core.coreVars.systemConfsDir}/certs/gbRootCert.json`, error => {
-		if (!error) {
-			var gbRootCert = require(`${core.coreVars.systemConfsDir}/certs/gbRootCert.json`);
-			certObject = {"cert": gbRootCert.cert};
-			console.log(JSON.stringify({"cert": gbRootCert.cert}));
-		} else {
-			console.log("growBox-Root CA does not exist. Please create a growBox-Root CA first");
-			certObject = {"cert": "growBox-Root CA does not exist. Please create a growBox-Root CA first"};
-		}
-	});
-//	console.log(certObject);
-*/
-}
-
 if (argv.r) {
 	console.log('Generating Root Certificate\n');
 	generateRootCert();
-}
-
-if (argv.t) {
-//	console.log('Generating Root Certificate\n');
-	readRootCert();
 }
 
 if (argv.c) {
@@ -94,12 +66,3 @@ if (argv.c) {
 		generateClientCert(`gbdevice-${core.genRegular(5).toLowerCase()}`);
 	}
 }
-
-/*
-module.exports = {
-	generateRootCert,
-	generateClientCert,
-	readRootCert,
-	attrs
-};
-*/

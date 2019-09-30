@@ -9,11 +9,8 @@ var gbSystem = require('../../system_confs/system_vars.json');
 //Variables and Constants
 var coreVars = {
 	"systemUser": '../../system_confs/system_vars.json',
-	"systemConfsDir": path.join(__dirname, '../../system_confs'),
 	"projectName": "growBox-Root",
 	"installedDir": path.join(__dirname, '../..'),
-	"dbStoreDir": path.join(__dirname, '../../db_storage'),
-	"logStoreDir": path.join(__dirname, '../../log_storage'),
 	"dbServer": "localhost",
 	"dbName": "gbRoot",
 	"dbRootDataCollection": "rootData",
@@ -26,6 +23,11 @@ var coreVars = {
 	"dbCertsDataCollection": "certsData",
 }
 
+//Required directories
+coreVars.systemConfsDir = `${coreVars.installedDir}/system_confs`;
+coreVars.dbStoreDir = `${coreVars.installedDir}/db_storage`;
+coreVars.logStoreDir = `${coreVars.installedDir}/log_storage`;
+
 //Selfsigned certificate attributes
 coreVars.certAttrs = [
 	{name: 'commonName', value: `${gbSystem.systemId}.${gbSystem.systemDomain}`},
@@ -34,7 +36,7 @@ coreVars.certAttrs = [
 ];
 
 //coreVars.instanceId = path.join(__dirname, `../../log_storage/pid/${coreVars.projectName}_Instance.id`);
-coreVars.instanceId = `../../log_storage/pid/${coreVars.projectName}_Instance.id`;
+coreVars.instanceId = `${coreVars.logStorage}/pid/${coreVars.projectName}_Instance.id`;
 coreVars.userInfo = getUserInfo();
 
 //Functions

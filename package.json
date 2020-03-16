@@ -37,7 +37,7 @@
     "express": "^4.17.1",
     "inquirer": "^6.3.0",
     "lodash": ">=4.17.15",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.2",
     "mongodb": "^3.2.6",
     "node-emoji": "^1.10.0",
     "node-forge": "^0.8.2"

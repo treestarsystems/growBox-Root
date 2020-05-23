@@ -13,3 +13,4 @@ node_modules
 hardcopy.0
 screenlog.0
 system_*.json
+.bash_history

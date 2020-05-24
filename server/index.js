@@ -1,15 +1,20 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-const core = require('./gbmodules/gbRootCore.js');
 const daemon = require('./service.js');
 const emoji = require('node-emoji');
+const compression = require('compression');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const childProcess = require('child_process');
+const path = require('path');
+const core = require('./gbmodules/gbRootCore.js');
+const jobs = require('./gbmodules/cronJobs.js').jobs;
 
 // Middleware
-app.use(bodyParser.json());
+app.use(compression());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use(cors());
 
 const root = require('./controller/routes/api/root');
@@ -73,11 +78,14 @@ if (process.env.CORRECT_USER) {
   console.log(`MongoDB is running: ${stdout.replace(/\n$/, '')}`);
   //Start app.
   startApp();
+  //Start all cron jobs defined in ./server/modules/cronJobs.js
+  for (key in jobs) {
+   jobs[key].start();
+  }
  });
 }
 
 process.on('SIGINT', () => {
-//	console.log('Shutting down MongoDB...');
  childProcess.exec(`mongod -f ${core.coreVars.systemConfsDir}/mongod.conf --shutdown`, (error, stdout, stderr) => {
   if (error) {
    console.error(`MongoDB error: ${error}`);

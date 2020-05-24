@@ -44,5 +44,5 @@ if (argv.r) {
 }
 
 module.exports = {
-	instanceInfo,
+ instanceInfo,
 }

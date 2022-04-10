@@ -40,7 +40,7 @@
     "express": "^4.17.1",
     "inquirer": "^6.3.0",
     "lodash": ">=4.17.15",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "mongodb": "^3.5.7",
     "node-emoji": "^1.10.0",
     "node-forge": "^0.8.5",
